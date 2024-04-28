@@ -1,11 +1,21 @@
+import { NotfoundComponent } from './Components/notfound/notfound.component';
+import { RootComponent } from './Components/root/root.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { LoginComponent } from './Components/login/login.component';
+import { ContactUsComponent } from './Components/contact-us/contact-us.component';
+import { AboutComponent } from './Components/about/about.component';
+import { ProductComponent } from './Components/product/product.component';
 // import { HomeComponent } from './Components/home/home.component';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
 
-    //{ path: '', component: HomeComponent },
-    // { path: 'products', component: ProductsComponent },
-    // { path: 'products/:id', component: ProductDetailsComponent },
-    // { path: 'products/:id/edit', component: ProductFormComponent },
-    // { path: '**', component: NotFoundComponent },
+    { path: '', component: RootComponent ,pathMatch: 'full' },
+    { path: 'products', component: ProductComponent },
+    { path: 'about', component: AboutComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'contact', component: ContactUsComponent },
+
+    { path: '**', component: NotfoundComponent },
 ];

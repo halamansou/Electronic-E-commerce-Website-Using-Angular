@@ -13,7 +13,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavebarComponent,FooterComponent,HomeComponent,ProductComponent,OfferComponent,LoginComponent,RegisterComponent,AboutComponent,ContactUsComponent],
+  imports: [NavebarComponent,FooterComponent,HomeComponent,ProductComponent,OfferComponent,LoginComponent,RegisterComponent,AboutComponent,ContactUsComponent,RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
