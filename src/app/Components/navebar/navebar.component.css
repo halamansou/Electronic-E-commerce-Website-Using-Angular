@@ -3,6 +3,7 @@
 .top-navbar{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 .top-navbar p{
     margin-top: 13px;
