@@ -1,4 +1,4 @@
-/* login */
+
 #login{
     width: 65%;
     height: 70vh;
@@ -8,7 +8,9 @@
     box-shadow: rgba(17,12, 46, 0.15) 0px 48px 100px 0px;
     font-size: 20px;
 }
-
+h3{
+    font-size: 70px;
+}
 #side1 h3{
     color: #ffc800;
     font-weight: bold;
@@ -78,7 +80,3 @@
     }
 }
 
-h3{
-    font-size: 70px;
-}
-/* login */
