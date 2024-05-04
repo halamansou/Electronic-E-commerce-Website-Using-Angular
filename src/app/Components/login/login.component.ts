@@ -37,6 +37,8 @@ export class LoginComponent {
         next: (response) => {
           console.log(response);
           if (response) {
+            localStorage.setItem('userToken',response.token);
+            this.authService.decodeUserData();
             this.router.navigate(['/']);
           } else {
             this.loginError = 'Email not registered or password does not match.';
