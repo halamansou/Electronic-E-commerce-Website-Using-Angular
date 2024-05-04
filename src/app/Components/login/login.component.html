@@ -1,18 +1,36 @@
-
 <div class="container" id="login">
     <div class="row">
-        <div class="col-md-5 py-3 py-md-0" id="side1">
-            <h3 class="text-center">Welcome Back!</h3>
-        </div>
-        <div class="col-md-7 py-3 py-md-0" id="side2">
-            <h3 class="text-center">Account login</h3>
-            <!-- <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sequi.</p> -->
-            <div class="input2 text-center">
-                <input type="text" class="form-control mb-3" placeholder="User Name">
-                <input type="password" class="form-control mb-3" placeholder="Password">
+      <div class="col-md-5 py-3 py-md-0" id="side1">
+        <h3 class="text-center">Welcome Back</h3>
+      </div>
+      <div class="col-md-7 py-3 py-md-0" id="side2">
+        <h3 class="text-center">Log in</h3>
+        <form (ngSubmit)="handelLogin()" [formGroup]="loginForm">
+
+          <div class="input2 text-center">
+         <p class="text-danger">{{ loginError }}</p>
+
+            
+            <input formControlName="email" type="email" class="form-control mb-3" placeholder="Email">
+            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger">
+              <p *ngIf="loginForm.get('email')?.getError?.('email')">Invalid Email</p>
+              <p *ngIf="loginForm.get('email')?.getError?.('required')">Email Required</p>
             </div>
-            <p class="text-center" id="btnlogin"><a href="#" class="btn btn-primary">LOG IN</a></p>
-            <p class="text-center"><a href="#">Forgot Password</a></p>
-        </div>
+            
+            <input formControlName="password" type="password" class="form-control mb-3" placeholder="Password">
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+              <p *ngIf="loginForm.get('password')?.getError?.('minlength')">Password Minimum Length must be 8 Characters</p>
+              <p *ngIf="loginForm.get('password')?.getError?.('required')">Password Required</p>
+            </div>
+
+          </div>
+          <button [disabled]="loginForm.invalid" type="submit" class="btn  text-center" id="btnlogin">
+            <i *ngIf="isLoading" class="sr-only">loading .....</i>
+            <span *ngIf="!isLoading"> Log In</span>
+          </button>
+          <p class="text-center"><a href="#">Forgot Password</a></p>
+        </form>
+      </div>
     </div>
-</div>
+  </div>
+  

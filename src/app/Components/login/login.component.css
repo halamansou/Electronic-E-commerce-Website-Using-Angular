@@ -57,6 +57,19 @@
     text-shadow: 0px 0px 1px black;
 }
 
+#side2 button {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: #ffc800;
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-shadow: 0px 0px 1px black;
+    margin-bottom: 30px;
+    margin-left: 35%;
+}
+
 #side2 p {
     margin-top: 10px;
 }
