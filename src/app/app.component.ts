@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { AboutComponent } from './Components/about/about.component';
 import { RegisterComponent } from './Components/register/register.component';
@@ -13,7 +14,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavebarComponent,FooterComponent,HomeComponent,ProductComponent,OfferComponent,LoginComponent,RegisterComponent,AboutComponent,ContactUsComponent,RouterOutlet],
+  imports: [NavebarComponent,FooterComponent,HomeComponent,ProductComponent,OfferComponent,LoginComponent,RegisterComponent,AboutComponent,ContactUsComponent,RouterOutlet,HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

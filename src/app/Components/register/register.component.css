@@ -1,56 +1,54 @@
-
-#login{
-    width: 65%;
-    height: 70vh;
+#register {
+    width: 100%;
+    height: auto;
     background-color: rgb(67 0 86);
     margin-top: 35px;
     border-radius: 10px;
-    box-shadow: rgba(17,12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     font-size: 20px;
 }
-h3{
-    font-size: 70px;
-}
-#side1 h3{
+
+#side1 h3 {
     color: #ffc800;
     font-weight: bold;
-    margin-top: 200px;
+    margin-top: 47%;
 }
 
-#side2{
+#side2 {
     background-color: white;
-    height: 70vh;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-#side2 h3{
+#side2 h3 {
     margin-top: 30px;
     color: #ffc800;
     font-weight: bold;
     text-shadow: 0px 1px 1px black;
 }
 
-.input2 input{
+.input2 input,
+.input2 select {
     margin-top: 15px;
     width: 300px;
+    max-width: 100%;
     border: none;
     border-bottom: 2px solid #ffc800;
     text-align: center;
 }
 
-.input2 input::placeholder{
+.input2 input::placeholder,
+.input2 select::placeholder {
     font-weight: bold;
 }
 
-#btnlogin{
-    padding-top: 10px;
-}
-
-#btnlogin a{
+#btnlogin,
+#btnlogin a,
+#side2 button {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 15px;
@@ -59,24 +57,9 @@ h3{
     font-weight: bold;
     border: none;
     text-shadow: 0px 0px 1px black;
+    margin-bottom: 30px;
 }
 
-#side2 p{
-    margin-top: 10px;
+h3 {
+    font-size: 30px;
 }
-
-@media (max-width: 991px){
-    .input2 input{
-        width: 250px;
-    }
-}
-
-@media (max-width: 765px){
-    .input2 input{
-        width: 260px;
-    }
-    #side2{
-        height: 60vh;
-    }
-}
-

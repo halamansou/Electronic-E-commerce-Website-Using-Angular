@@ -1,19 +1,56 @@
-<div class="container" id="login">
-    <div class="row">
-        <div class="col-md-5 py-3 py-md-0" id="side1">
-            <h3 class="text-center">Register</h3>
-        </div>
-        <div class="col-md-7 py-3 py-md-0" id="side2">
-            <h3 class="text-center">Create Account</h3>
-            <div class="input2 text-center">
-            <input type="name" placeholder="Name">
-            <input type="name" placeholder="User Name">
-            <input type="number" placeholder="Phone">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            </div>
-            <p class="text-center" id="btnlogin"><a href="#">SIGN UP</a></p>
-        </div>
-
+<div class="container" id="register">
+  <div class="row">
+    <div class="col-md-5 py-3 py-md-0" id="side1">
+      <h3 class="text-center">Register</h3>
     </div>
-   </div>
+    <div class="col-md-7 py-3 py-md-0" id="side2">
+      <h3 class="text-center">Create Account</h3>
+      <form (ngSubmit)="handelregister(registerForm)" [formGroup]="registerForm">
+        <div class="input2 text-center">
+          <input formControlName="name" type="text" class="form-control mb-3" placeholder="Name">
+          <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('name')?.getError?.('minlength')">Name Minimum Length must be 3 Characters</p>
+            <p *ngIf="registerForm.get('name')?.getError?.('required')">Name Required</p>
+          </div>
+          
+          <input formControlName="email" type="email" class="form-control mb-3" placeholder="Email">
+          <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('email')?.getError?.('email')">Invalid Email</p>
+            <p *ngIf="registerForm.get('email')?.getError?.('required')">Email Required</p>
+          </div>
+          
+          <input formControlName="password" type="password" class="form-control mb-3" placeholder="Password">
+          <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('password')?.getError?.('minlength')">Password Minimum Length must be 8 Characters</p>
+            <p *ngIf="registerForm.get('password')?.getError?.('required')">Password Required</p>
+          </div>
+          
+          <input formControlName="phone" type="tel" class="form-control mb-3" placeholder="Phone">
+          <div *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('phone')?.getError?.('pattern')">Invalid Phone Number</p>
+            <p *ngIf="registerForm.get('phone')?.getError?.('required')">Phone Number Required</p>
+          </div>
+          
+          <input formControlName="address" type="text" class="form-control mb-3" placeholder="Address">
+          <div *ngIf="registerForm.get('address')?.invalid && registerForm.get('address')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('address')?.getError?.('required')">Address Required</p>
+          </div>
+          
+          <select formControlName="role" class="form-control mb-3">
+            <option value="" disabled selected class="fw-bold">Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="user">Regular User</option>
+          </select>
+          <div *ngIf="registerForm.get('role')?.invalid && registerForm.get('role')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('role')?.getError?.('required')">Role Required</p>
+          </div>
+          
+        </div>
+        <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary text-center" id="btnlogin">
+          <i *ngIf="isLoading" class="sr-only">loading .....</i>
+          <span *ngIf="!isLoading"> SIGN UP</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

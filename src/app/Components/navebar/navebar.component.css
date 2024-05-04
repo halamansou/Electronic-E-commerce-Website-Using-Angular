@@ -24,6 +24,11 @@
 .top-navbar a:hover{
     color: black;
 }
+
+#cart{
+    color: #ffc800;
+    font-size: 40px;
+}
 @media screen and (max-width:400px){
     .top-navbar a{
         font-size: 13px;
