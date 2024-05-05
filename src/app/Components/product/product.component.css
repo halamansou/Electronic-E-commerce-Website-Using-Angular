@@ -1,45 +1,79 @@
-
 /* product cards */
-#product-cards{
+#product-cards {
     margin-top: 100px;
 }
-#product-cards h1{
+
+#product-cards h1 {
     color: #ffc800;
     text-shadow: 1px 1px 1px black;
     border-bottom: 2px solid #ffc800;
 }
-#product-cards .card h3{
+
+#product-cards .card {
+    height: 420px; /* Set the fixed height for all cards */
+}
+
+#product-cards .card:hover {
+    transform: scale(1.1);
+}
+
+#product-cards .card img {
+    height: 200px; /* Set the fixed height for all images */
+    width: 100%; /* Ensure images fill their container width */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+#product-cards .card h3 {
     font-size: 20px;
     color: black;
 }
-#product-cards .card p{
+
+#product-cards .card p {
     font-size: 12px;
     margin-top: 5px;
     color: black;
 }
-.star i{
+
+.star i {
     margin-left: 5px;
     font-size: 13px;
 }
-.checked{
+
+.checked {
     color: #ffc800;
 }
-#product-cards .card h2{
+
+#product-cards .card h2 {
     font-size: 20px;
     color: black;
     margin-top: 20px;
 }
-#product-cards .card h2 span{
+
+#product-cards .card h2 span {
     float: right;
     color: black;
     cursor: pointer;
 }
-@media screen and (max-width:1000px){
-    #product-cards .card h3{
+
+@media screen and (max-width:1000px) {
+    #product-cards .card h3 {
         font-size: 15px;
     }
 }
+button{
+    background-color: #ffc800;
+    opacity: 0;
+    transition: transform 1s , opacity 1s;
+    transform: translateY(100%);
+}
+#pro:hover button{
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+button:hover{
+    opacity: 1;
+    background-color: #ffc800;
+
+}
 /* product cards */
-
-
-
