@@ -15,4 +15,9 @@ export class ProductsService {
   getProducts()  : Observable <any>{
     return this .httpClient.get('https://localhost:7158/api/Product');
   }
+
+  getProductDetails(productId: number): Observable<any> {
+    return this.httpClient.get(`https://localhost:7158/api/Product/${productId}`);
+  }
+  
 }

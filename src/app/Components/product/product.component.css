@@ -76,4 +76,8 @@ button:hover{
     background-color: #ffc800;
 
 }
+
+a{
+    text-decoration: none;
+}
 /* product cards */
