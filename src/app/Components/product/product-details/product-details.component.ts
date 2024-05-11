@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -6,7 +7,7 @@ import { ProductsService } from './../../../Services/products.service';
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })

@@ -20,4 +20,13 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Electronic E-commerce Website';
+
+  searchTerm:string ='';
+
+
+  receiveSearchTerm(searchTerm: string): void {
+    console.log('Search term received:', searchTerm);
+    this.searchTerm = searchTerm;
+  }
+  
 }

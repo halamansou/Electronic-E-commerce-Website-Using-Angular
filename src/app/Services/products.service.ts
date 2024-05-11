@@ -19,5 +19,10 @@ export class ProductsService {
   getProductDetails(productId: number): Observable<any> {
     return this.httpClient.get(`https://localhost:7158/api/Product/${productId}`);
   }
+
+
+  // searchProducts(searchTerm: string): Observable<any> {
+  //   return this.httpClient.get(`https://localhost:7158/api/Product/search?term=${searchTerm}`);
+  // }
   
 }

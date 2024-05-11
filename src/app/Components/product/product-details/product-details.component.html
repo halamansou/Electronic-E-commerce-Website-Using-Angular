@@ -8,9 +8,9 @@
       </aside>
       <main class="col-lg-6">
         <div class="ps-lg-3">
-          <h4 class="title text-dark">
+          <h1 class="title text-dark">
             {{ productDetails?.name }}
-          </h4>
+          </h1>
           <div class="d-flex flex-row my-3">
             <div class="text-warning mb-1 me-2">
               <span class="ms-1">
@@ -29,7 +29,7 @@
           </div>
 
           <div class="mb-3">
-            <b class="h2">${{ productDetails?.price }}</b>
+            <b class="h2">{{ productDetails?.price | currency}}</b>
           </div>
 
           <p>

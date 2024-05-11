@@ -1,7 +1,8 @@
 <div class="container" id="product-cards">
-  <h1 class="text-center">PRODUCTS</h1>
   <div class="row" style="margin-top: 30px;">
-    <div *ngFor="let product of products" class="col-md-3 py-5 py-md-0" style="margin-top: 30px;" id="pro">
+    <!-- <div *ngFor="let product of products | search: 'm'" class="col-md-3 py-5 py-md-0" style="margin-top: 30px;" id="pro"> -->
+
+    <div *ngFor="let product of products | search: searchTerm" class="col-md-3 py-5 py-md-0" style="margin-top: 30px;" id="pro">
       <a [routerLink]="['/productDetails', product.id]">
         <div class="card">
           <img [src]="product.image" alt="">
