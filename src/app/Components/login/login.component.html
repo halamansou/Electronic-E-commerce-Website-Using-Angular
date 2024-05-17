@@ -28,7 +28,10 @@
             <i *ngIf="isLoading" class="sr-only">loading .....</i>
             <span *ngIf="!isLoading"> Log In</span>
           </button>
-          <p class="text-center"><a href="#">Forgot Password</a></p>
+          <br/>
+          <a [routerLink]="['/register']" class="text-center " style="margin-left: 37%;"><a href="">Sign Up</a></a>
+
+          <p class="text-center"><a href="">Forgot Password</a></p>
         </form>
       </div>
     </div>

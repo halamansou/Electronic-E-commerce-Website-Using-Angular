@@ -1,3 +1,5 @@
+import { AuthGuard } from './Services/auth.guard';  // Ensure this path is correct
+import { CartComponent } from './Components/cart/cart.component';
 import { ProductDetailsComponent } from './Components/product/product-details/product-details.component';
 import { NotfoundComponent } from './Components/notfound/notfound.component';
 import { RootComponent } from './Components/root/root.component';
@@ -10,16 +12,14 @@ import { ProductComponent } from './Components/product/product.component';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-
-    { path: '', component: RootComponent ,pathMatch: 'full' },
-    { path: 'home', component: RootComponent ,pathMatch: 'full' },
-    { path: 'products', component: ProductComponent },
+    { path: '', component: RootComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+    { path: 'home', component: RootComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+    { path: 'products', component: ProductComponent, canActivate: [AuthGuard] },
     { path: 'productDetails/:id', component: ProductDetailsComponent },
-
-    { path: 'about', component: AboutComponent },
+    { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'contact', component: ContactUsComponent },
-
+    { path: 'contact', component: ContactUsComponent, canActivate: [AuthGuard] },
+    { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
     { path: '**', component: NotfoundComponent },
 ];

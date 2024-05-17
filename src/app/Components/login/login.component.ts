@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup ,Validators} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router'; 
+import { Router, RouterLink } from '@angular/router'; 
 import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, HttpClientModule],
+  imports: [ReactiveFormsModule, CommonModule, HttpClientModule,RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

@@ -1,3 +1,4 @@
+import { CartService } from './../../Services/cart.service';
 import { FormControl } from '@angular/forms';
 import { Product } from './../../../../product.app';
 import { SearchPipe } from './../../Pipe/search.pipe';
@@ -6,6 +7,7 @@ import { ProductsService } from './../../Services/products.service';
 import { Component , OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+
 @Component({
   selector: 'app-product',
   standalone: true,
@@ -17,7 +19,7 @@ export class ProductComponent implements OnInit {
   products: Product[] = [];
   searchTerm: string = '';
 
-  constructor(private productService: ProductsService) {}
+  constructor(private productService: ProductsService,private cartService:CartService) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -33,4 +35,14 @@ export class ProductComponent implements OnInit {
     console.log('Search term received:', searchTerm);
     this.searchTerm = searchTerm;
   }
+
+
+  addToCart(productId:number){
+    this.cartService.addToCart(productId).subscribe({
+      next:(response) => console.log(response),
+      error:(error) => console.log(error)
+      
+    })
+  }
+
 }
