@@ -27,14 +27,15 @@
                   {{ product.quantity === 0 ? 'Not Available Now' : product.quantity }}
                 </td>
                 <td>
-                  <i
-                    class="mx-1 fs-5 text-warning bi bi-eye-fill"
-                    [routerLink]="['/products', product.id]"
-                    title="View Product"
-                  ></i>
+                 <!-- go to product details -->
+                  <a [routerLink]="['/productDetails', product.id]">
+                    <i class="mx-1 fs-5 text-warning bi bi-eye-fill" title="View Product"></i>
+                  </a>
+                  
+                 
                   <i
                     class="mx-1 fs-5 text-info bi bi-pencil-square"
-                    [routerLink]="['/products', product.id, 'edit']"
+                    [routerLink]="['/admin', 'edit-product' , product.id]"
                     title="Edit Product"
                   ></i>
                   <i
