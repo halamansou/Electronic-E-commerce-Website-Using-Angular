@@ -1,0 +1,50 @@
+
+<div class="container-fluid">
+    
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center  pb-2 mb-3 border-bottom">
+          <h1 class="h2">Admin Dashboard</h1>
+        </div>
+  
+        <!-- Products Table -->
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Rate</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }} $</td>
+                <td>{{ product.rate }}</td>
+                <td [ngStyle]="{'color': product.quantity === 0 ? 'red' : 'inherit'}">
+                  {{ product.quantity === 0 ? 'Not Available Now' : product.quantity }}
+                </td>
+                <td>
+                  <i
+                    class="mx-1 fs-5 text-warning bi bi-eye-fill"
+                    [routerLink]="['/products', product.id]"
+                    title="View Product"
+                  ></i>
+                  <i
+                    class="mx-1 fs-5 text-info bi bi-pencil-square"
+                    [routerLink]="['/products', product.id, 'edit']"
+                    title="Edit Product"
+                  ></i>
+                  <i
+                    class="mx-1 fs-5 text-danger bi bi-trash3-fill"
+                    title="Delete Product"
+                  ></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>   
+  </div>
+  

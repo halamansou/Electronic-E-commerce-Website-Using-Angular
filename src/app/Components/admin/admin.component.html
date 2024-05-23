@@ -1,0 +1,42 @@
+<!-- admin.component.html -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+      <div class="position-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/admin']">
+              <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/admin/all-products']">
+              <i class="bi bi-plus-circle"></i> All Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/admin/add-product']">
+              <i class="bi bi-plus-circle"></i> Add Product
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/admin/edit-product']">
+              <i class="bi bi-pencil-square"></i> Edit Product
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/admin/delete-product']">
+              <i class="bi bi-trash3-fill"></i> Delete Product
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

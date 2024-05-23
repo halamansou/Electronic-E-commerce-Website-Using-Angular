@@ -1,5 +1,5 @@
 import { CartService } from './../../Services/cart.service';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormsModule } from '@angular/forms';
 import { Product } from './../../../../product.app';
 import { SearchPipe } from './../../Pipe/search.pipe';
 import { RouterLink } from '@angular/router';
@@ -11,7 +11,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule,RouterLink,SearchPipe],
+  imports: [CommonModule,RouterLink,SearchPipe,FormsModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
