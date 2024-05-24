@@ -1,3 +1,4 @@
+import { DeleteProductComponent } from './../delete-product/delete-product.component';
 import { Product } from './../../../../../product.app';
 // all-product.component.ts
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ import { CartService } from './../../../Services/cart.service';
 @Component({
   selector: 'app-all-product',
   standalone: true,
-  imports: [RouterLink, CommonModule, FormsModule],
+  imports: [RouterLink, CommonModule, FormsModule,DeleteProductComponent],
   templateUrl: './all-product.component.html',
   styleUrls: ['./all-product.component.css']
 })
@@ -30,5 +31,5 @@ export class AllProductComponent implements OnInit {
     });
   }
 
-  
+  // confirmDelete();
 }
