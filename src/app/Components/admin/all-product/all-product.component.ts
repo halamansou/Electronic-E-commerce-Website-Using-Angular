@@ -18,7 +18,7 @@ import { CartService } from './../../../Services/cart.service';
 export class AllProductComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(private productService: ProductsService, private cartService: CartService) {}
+  constructor(private productService: ProductsService) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -30,10 +30,5 @@ export class AllProductComponent implements OnInit {
     });
   }
 
-  addToCart(productId: number) {
-    this.cartService.addToCart(productId).subscribe({
-      next: (response) => console.log(response),
-      error: (error) => console.log(error)
-    });
-  }
+  
 }
