@@ -1,6 +1,20 @@
-<div class="container" id="product-cards">
-    <input [(ngModel)]="searchTerm" name="searchTerm" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 
+
+<div class="container" id="product-cards">
+  <select [(ngModel)]="searchTerm"  class="form-select" aria-label="Search">
+    <option value="">All</option>
+    <option value="Headphone">Headphone</option>
+    <option value="Coffee Machine">Coffee Machine</option>
+    <option value="Airpods">Airpods</option>
+    <option value="Smart Watch">Smart Watch</option>
+    <option value="Laptop">Laptop</option>
+
+   </select>
+
+    <input [(ngModel)]="searchTerm" name="searchTerm" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+   
+    
+    
   <div class="row" style="margin-top: 30px;">
     <!-- <div *ngFor="let product of products | search: 'm'" class="col-md-3 py-5 py-md-0" style="margin-top: 30px;" id="pro"> -->
 

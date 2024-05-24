@@ -87,7 +87,12 @@ a{
 input{
     width: 50%;
     margin-left: 24%;
-    margin-right: 20%;
+    
 
 }
 
+select{
+    width: 30%;
+    margin-left: 60%;
+    margin-bottom: 2%;
+}
