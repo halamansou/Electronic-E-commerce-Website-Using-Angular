@@ -22,7 +22,7 @@ export class AddProductComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   onSubmit() {
-    this.http.post('https://localhost:7158/api/Product', this.product)
+    this.http.post('http://localhost:5177/api/Product', this.product)
       .subscribe({
         next: (response) => {
           console.log('Product added successfully', response);

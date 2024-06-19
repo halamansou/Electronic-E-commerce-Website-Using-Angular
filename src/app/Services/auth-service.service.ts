@@ -21,10 +21,10 @@ export class AuthServiceService {
   }
 
   register(userData: any): Observable<any> {
-    return this.httpClient.post('https://localhost:7158/api/Users', userData);
+    return this.httpClient.post('http://localhost:5177/api/Users', userData);
   }
 
   login(userData: any): Observable<any> {
-    return this.httpClient.post('https://localhost:7158/api/Users/login', userData);
+    return this.httpClient.post('http://localhost:5177/api/Users/login', userData);
   }
 }

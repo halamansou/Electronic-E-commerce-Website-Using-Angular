@@ -30,7 +30,7 @@ export class RegisterComponent {
     password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
     phone: new FormControl(null, [Validators.required, Validators.pattern(/^01[0125][0-9]{8}$/)]),
     address: new FormControl(null, Validators.required),
-    role: new FormControl('', Validators.required),
+    // role: new FormControl('', Validators.required),
   });
 
   handelregister(registerForm: FormGroup){
